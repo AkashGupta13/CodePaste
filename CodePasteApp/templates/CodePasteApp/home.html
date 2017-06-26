@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<form action="{% url 'create' %}" method="post">
+{% csrf_token %}
+    <center>
+        Enter Title:<input type="text" name="title" id="title"/><br>
+    Enter Code:<br><textarea rows="10" cols="50" name="codedata" id="codedata"></textarea><br>
+    <input type="submit" value="Create" />
+    </center>
+</form>
+
+</body>
+</html>
