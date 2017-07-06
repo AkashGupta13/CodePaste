@@ -26,9 +26,9 @@ def Create(request):
     if request.method == 'POST':
         c = Code(data=request.POST['codedata'])
         c.title = request.POST['title']
-        unique_string = get_random_string(5)
         success = False
         while success==False:
+            unique_string = get_random_string(5)
             try:
                 obj = Code.objects.get(link=unique_string)
                 success = False
