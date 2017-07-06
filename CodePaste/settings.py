@@ -25,7 +25,7 @@ SECRET_KEY = '2nfj$n2r97$a58)5kpp-c*=m+c!q@95%+vx)1u8#i0a4s-o@m)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['akashcodepaste.herokuapp.com',]
 
 
 # Application definition
