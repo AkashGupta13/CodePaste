@@ -2,17 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>CodePaste</title>
+    <style type="text/css">
+		.title{
+			background-color: #ff4081;
+			font-style: Arial;
+			font-size: 20;
+			margin: 10;
+			border: solid 3px;
+		}
+		.heading{
+			background-color: #2196F3;
+			font-style: Times;
+			font-size: 2em;
+			font-style: bold;
+			border: solid 3px;
+			padding-bottom: 20px;
+		}
+		.codedata{
+			background-color: #2196F3;
+			color: black;
+			border: solid 3px;
+		}
+		textarea{
+			background-color: #ffa726;
+			font-style: Arial;
+			font-size: 20px;
+			color: black;
+			border: solid 1px;
+		}
+		.text{
+		    background-color: #ffa726;
+		    font-style: Arial;
+			font-size: 23px;
+			color: black;
+			border: solid 1px;
+		}
+		.button{
+		    background-color: #ff4081;
+		    font-size:25px;
+		    border: solid 1px;
+		}
+	</style>
 </head>
-<body bgcolor="#40C4FF">
-
+<body bgcolor="#00BCD4"><center>
+<div class="title"><h1> CodePaste </h1></div></center>
 <form action="{% url 'create' %}" method="post">
 {% csrf_token %}
-    <center><h1>
-        <br>Enter Title:<input type="text" name="title" id="title"/><br>
-    <br>Enter Code:<br><textarea rows="10" cols="50" name="codedata" id="codedata"></textarea><br>
-   <br><input type="submit" value="Create" />
-    </h1></center>
+    <center>
+        <div class="heading"><b>Enter Title </b><input type="text" class="text" name="title" id="title"/><br>
+        <b>Enter Code:</b><br><textarea name="codedata" rows="10" cols="70"></textarea><br>
+        <input type="submit" class="button" value="Create" />
+    </div></center>
 </form>
 
 </body>

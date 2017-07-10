@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Code</title>
+    <style type="text/css">
+    .title{
+			background-color: #ff4081;
+			font-style: Arial;
+			font-size: 20;
+			margin: 10;
+			border: solid 3px;
+		}
+		.heading{
+			background-color: #2196F3;
+			font-style: Times;
+			font-size: 2em;
+			font-style: bold;
+			border: solid 3px;
+			padding-bottom: 20px;
+		}
+		textarea{
+			background-color: #ffa726;
+			font-style: Arial;
+			font-size: 20px;
+			color: black;
+			border: solid 1px;
+		}
+		a{
+		font-size:25px;
+		background-color: #ff4081;
+		border: solid 1px;
+		color: black;
+		text-decoration:none;
+		}
+	</style>
 </head>
 <center>
 <body bgcolor="#40C4FF">
-    <h1>
-    {{ codes.title }}
-    </h1>
-    <a href="delete/">Delete</a>
-    <br><br>
-    <textarea rows="10" cols="50" name="codedata" id="codedata">
-{{ codes.data }}
-    </textarea>
+<div class="title"><h1> CodePaste </h1></div>
+<div class="heading">
+{{ codes.title }}
+    <br>
+    <textarea rows="10" cols="70" name="codedata" id="codedata">
+{{ codes.data }}</textarea><br><br>
+<a href="delete/">Delete</a></div>
 </body>
 </center>
 </html>
