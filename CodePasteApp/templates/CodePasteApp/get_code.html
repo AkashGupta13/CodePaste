@@ -15,9 +15,9 @@
 			background-color: #2196F3;
 			font-style: Times;
 			font-size: 2em;
-			font-style: bold;
 			border: solid 3px;
 			padding-bottom: 20px;
+			padding-top: 20px;
 		}
 		textarea{
 			background-color: #ffa726;
@@ -33,6 +33,18 @@
 		color: black;
 		text-decoration:none;
 		}
+		.button{
+		    background-color: #ff4081;
+		    font-size:25px;
+		    border: solid 1px;
+		}
+		.text{
+		    background-color: #ffa726;
+		    font-style: Arial;
+			font-size: 23px;
+			color: black;
+			border: solid 1px;
+		}
 	</style>
 </head>
 <center>
@@ -41,9 +53,19 @@
 <div class="heading">
 {{ codes.title }}
     <br>
-    <textarea rows="10" cols="70" name="codedata" id="codedata">
-{{ codes.data }}</textarea><br><br>
-<a href="delete/">Delete</a></div>
+    <form method="post" action="{{ request.path }}update/">
+        {% csrf_token %}
+    <textarea rows="10" cols="70" name="codedata">
+{{ codes.data }}</textarea><br>
+        Password <input type="text" class="text" name="password"/>
+<input type="submit" value="Update" class="button">
+   </form>
+<form action="{{ request.path }}delete/" method="post">
+    {% csrf_token %}
+     Password <input type="text" class="text" name="password"/>
+     <input type="submit" class="button" value="Delete">
+</form></div>
+
 </body>
 </center>
 </html>

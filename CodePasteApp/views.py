@@ -29,6 +29,7 @@ def Create(request):
             return HttpResponseRedirect("/")
         c = Code(data=request.POST['codedata'])
         c.title = request.POST['title']
+        c.password = request.POST['password']
         success = False
         while success==False:
             unique_string = get_random_string(5)
@@ -43,5 +44,14 @@ def Create(request):
 
 def Delete(request,string):
     obj = get_object_or_404(Code,link=string)
-    obj.delete()
-    return HttpResponseRedirect("/")
+    if obj.password == request.POST['password']:
+        obj.delete()
+        return HttpResponseRedirect("/")
+    return HttpResponseRedirect("/"+obj.link+"/")
+
+
+def Update(request,string):
+    obj = get_object_or_404(Code, link=string)
+    if(obj.password == request.POST['password']):
+            Code.objects.filter(link=string).update(data=request.POST['codedata'])
+    return HttpResponseRedirect("/" + obj.link + "/")

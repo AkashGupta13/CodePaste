@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^create/$',views.Create,name="create"),
     url(r'^(?P<string>.*)/delete/$',views.Delete,name="delete"),
+    url(r'^(?P<string>.*)/update/$',views.Update,name="update"),
     url(r'^(?P<string>.*)/$',views.GetCode,name="get_code"),
 
 

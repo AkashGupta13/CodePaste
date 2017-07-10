@@ -15,9 +15,9 @@
 			background-color: #2196F3;
 			font-style: Times;
 			font-size: 2em;
-			font-style: bold;
 			border: solid 3px;
 			padding-bottom: 20px;
+			padding-top: 20px;
 		}
 		.codedata{
 			background-color: #2196F3;
@@ -50,8 +50,9 @@
 <form action="{% url 'create' %}" method="post">
 {% csrf_token %}
     <center>
-        <div class="heading"><b>Enter Title </b><input type="text" class="text" name="title" id="title"/><br>
-        <b>Enter Code:</b><br><textarea name="codedata" rows="10" cols="70"></textarea><br>
+        <div class="heading">Enter Title <input type="text" class="text" name="title"/>
+            Password <input type="text" class="text" name="password"/><br>
+        Enter Text:<br><textarea name="codedata" rows="10" cols="70"></textarea><br>
         <input type="submit" class="button" value="Create" />
     </div></center>
 </form>
