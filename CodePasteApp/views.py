@@ -24,6 +24,9 @@ def GetCode(request,string):
 
 def Create(request):
     if request.method == 'POST':
+        checkdata = request.POST['codedata']
+        if(checkdata == ''):
+            return HttpResponseRedirect("/")
         c = Code(data=request.POST['codedata'])
         c.title = request.POST['title']
         success = False
