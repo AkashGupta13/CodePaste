@@ -25,7 +25,7 @@ SECRET_KEY = '2nfj$n2r97$a58)5kpp-c*=m+c!q@95%+vx)1u8#i0a4s-o@m)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['akashcodepaste.herokuapp.com',]
+ALLOWED_HOSTS = ['akashcodepaste.herokuapp.com','localhost']
 
 
 # Application definition
@@ -85,13 +85,13 @@ WSGI_APPLICATION = 'CodePaste.wsgi.application'
 #         "USER":  'root',
 #         'PASSWORD': '',
 #         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-#         'PORT': '9090',
+#         'PORT': '3306',
 #         'OPTIONS': {
 #             'autocommit': True,
 #         },
 #     }
 # }
-
+#
 import dj_database_url
 
 DATABASES = { 'default': dj_database_url.config(conn_max_age=500) }
